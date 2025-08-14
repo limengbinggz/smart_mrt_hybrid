@@ -1,0 +1,23 @@
+\begin{subtable}[H]
+
+\scriptsize\caption
+{\label{tab:sim:results:contrastsA}Comparison of effects on the proximal outcome between $A_t = 1$ and 0, for a fixed DTR or averaging over DTRs. }
+\centering
+\begin{tabularx}{\linewidth}{cXlllllll}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{3}{c}{Hybrid} & \multicolumn{3}{c}{WCLS} \\
+\cmidrule(l{3pt}r{3pt}){4-6} \cmidrule(l{3pt}r{3pt}){7-9}
+ & Contrast & True & Bias & SE & CP & Bias & SE & CP\\
+\midrule
+(1) & $t < t^*: \EE[Y(A_t = 1, Z_1 = 1)] - \EE[Y(A_t = 0, Z_1 = 1)]$ & 0.1 & 0 & 0.03 & 0.94 & -0.02 & 0.03 & 0.88\\
+(2) & $t < t^*: \EE[Y(A_t = 1, Z_1 = -1)] - \EE[Y(A_t = 0, Z_1 = -1)]$ & 0.7 & 0 & 0.02 & 0.95 & 0.05 & 0.03 & 0.51\\
+(3) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (1, 1)] - \EE[Y(A_t = 0, \bar Z = (1, 1)]$ & 0.15 & 0 & 0.04 & 0.93 & -0.01 & 0.03 & 0.93\\
+(4) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (1, -1)] - \EE[Y(A_t = 0, \bar Z = (1, -1)]$ & 0.05 & 0 & 0.04 & 0.95 & -0.03 & 0.06 & 0.89\\
+(5) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (-1, 1)] - \EE[Y(A_t = 0, \bar Z = (-1, 1)]$ & 0.89 & 0 & 0.04 & 0.95 & 0.07 & 0.05 & 0.7\\
+(6) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (-1, -1)] - \EE[Y(A_t = 0, \bar Z = (-1, -1)]$ & 0.51 & 0 & 0.03 & 0.96 & 0.03 & 0.03 & 0.82\\
+\midrule
+(7) & $t < t^*: \EE[Y(A_t = 1, Z_1)] - \EE[Y(A_t = 0, Z_1)]$ & 0.4 & 0 & 0.02 & 0.94 & 0.02 & 0.02 & 0.88\\
+(8) & $t \geq t^*: \EE[Y(A_t = 1, Z_1, Z_2)] - \EE[Y(A_t = 0, Z_1, Z_2)]$ & 0.4 & 0 & 0.02 & 0.94 & 0.02 & 0.02 & 0.88\\
+\bottomrule
+\end{tabularx}
+\end{subtable}

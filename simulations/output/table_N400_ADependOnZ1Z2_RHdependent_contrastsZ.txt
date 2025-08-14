@@ -1,0 +1,22 @@
+\begin{subtable}[H]
+
+\scriptsize\caption
+{\label{tab:sim:results:contrastsZ}Comparison of effects on the proximal outcome between DTRs averaging over MRT treatments. }
+\centering
+\begin{tabularx}{\linewidth}{cXlllllllll}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{3}{c}{Hybrid} & \multicolumn{3}{c}{WR} \\
+\cmidrule(l{3pt}r{3pt}){4-6} \cmidrule(l{3pt}r{3pt}){7-9}
+ & Contrast & True & Bias & SE & CP & Bias & SE & CP & mRE & sdRE\\
+\midrule
+(1) & $t < t^*: \EE[Y(A_t, Z_1 = 1) - Y(A_t, Z_1 = -1)]$ & 0.4 & 0 & 0.03 & 0.92 & 0 & 0.03 & 0.94 & 1.17 & 0.06\\
+\midrule
+(2) & $t \geq t^*: \EE[Y(A_t, \bar Z = (1, 1)) - Y(A_t, \bar Z = (1, -1))]$ & -0.2 & 0 & 0.04 & 0.97 & 0 & 0.04 & 0.96 & 0.83 & 0.09\\
+(3) & $t \geq t^*: \EE[Y(A_t, \bar Z = (1, 1)) - Y(A_t, \bar Z = (-1, 1))]$ & 0.3 & 0 & 0.04 & 0.96 & 0 & 0.04 & 0.96 & 1.00 & 0.07\\
+(4) & $t \geq t^*: \EE[Y(A_t, \bar Z = (1, 1)) - Y(A_t, \bar Z = (-1, -1))]$ & 0.3 & 0 & 0.04 & 0.94 & 0 & 0.04 & 0.94 & 1.03 & 0.07\\
+(5) & $t \geq t^*: \EE[Y(A_t, \bar Z = (1, -1)) - Y(A_t, \bar Z = (-1, 1))]$ & 0.5 & 0 & 0.04 & 0.94 & 0 & 0.04 & 0.95 & 1.05 & 0.07\\
+(6) & $t \geq t^*: \EE[Y(A_t, \bar Z = (1, -1)) - Y(A_t, \bar Z = (-1, -1))]$ & 0.5 & 0 & 0.04 & 0.93 & 0 & 0.04 & 0.95 & 1.09 & 0.07\\
+(7) & $t \geq t^*: \EE[Y(A_t, \bar Z = (-1, 1)) - Y(A_t, \bar Z = (-1, -1))]$ & 0 & 0 & 0.04 & 0.96 & 0 & 0.04 & 0.96 & 1.03 & 0.06\\
+\bottomrule
+\end{tabularx}
+\end{subtable}

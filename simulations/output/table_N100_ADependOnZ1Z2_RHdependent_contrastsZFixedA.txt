@@ -1,0 +1,29 @@
+\begin{subtable}[H]
+
+\scriptsize\caption
+{\label{tab:sim:results:contrastsZ:fixedA}Comparison of effects on the proximal outcome between DTRs for a fixed MRT treatment $A_t$. }
+\centering
+\begin{tabularx}{\linewidth}{cXllll}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{3}{c}{Hybrid} \\
+\cmidrule(l{3pt}r{3pt}){4-6}
+ & Contrast & True & Bias & SE & CP\\
+\midrule
+(1) & $t < t^*: \EE[Y(A_t = 0, Z_1 = 1) - Y(A_t = 0, Z_1 = -1)]$ & 0.62 & 0 & 0.11 & 0.9\\
+(2) & $t \geq t^*: \EE[Y(A_t = 0, \bar Z = (1, 1)) - Y(A_t = 0, \bar Z = (1, -1))]$ & -0.24 & 0 & 0.11 & 0.97\\
+(3) & $t \geq t^*: \EE[Y(A_t = 0, \bar Z = (1, 1)) - Y(A_t = 0, \bar Z = (-1, 1))]$ & 0.46 & 0 & 0.09 & 0.94\\
+(4) & $t \geq t^*: \EE[Y(A_t = 0, \bar Z = (1, 1)) - Y(A_t = 0, \bar Z = (-1, -1))]$ & 0.48 & 0 & 0.1 & 0.96\\
+(5) & $t \geq t^*: \EE[Y(A_t = 0, \bar Z = (1, -1)) - Y(A_t = 0, \bar Z = (-1, 1))]$ & 0.7 & 0 & 0.1 & 0.93\\
+(6) & $t \geq t^*: \EE[Y(A_t = 0, \bar Z = (1, -1)) - Y(A_t = 0, \bar Z = (-1, -1))]$ & 0.73 & 0 & 0.11 & 0.94\\
+(7) & $t \geq t^*: \EE[Y(A_t = 0, \bar Z = (-1, 1)) - Y(A_t = 0, \bar Z = (-1, -1))]$ & 0.03 & 0 & 0.08 & 0.94\\
+\midrule
+(8) & $t < t^*: \EE[Y(A_t = 1, Z_1 = 1) - Y(A_t = 1, Z_1 = -1)]$ & 0.02 & 0 & 0.1 & 0.89\\
+(9) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (1, 1)) - Y(A_t = 1, \bar Z = (1, -1))]$ & -0.14 & 0.01 & 0.09 & 0.92\\
+(10) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (1, 1)) - Y(A_t = 1, \bar Z = (-1, 1))]$ & -0.28 & 0.01 & 0.11 & 0.92\\
+(11) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (1, 1)) - Y(A_t = 1, \bar Z = (-1, -1))]$ & 0.12 & 0 & 0.1 & 0.92\\
+(12) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (1, -1)) - Y(A_t = 1, \bar Z = (-1, 1))]$ & -0.14 & 0 & 0.1 & 0.92\\
+(13) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (1, -1)) - Y(A_t = 1, \bar Z = (-1, -1))]$ & 0.27 & 0 & 0.09 & 0.93\\
+(14) & $t \geq t^*: \EE[Y(A_t = 1, \bar Z = (-1, 1)) - Y(A_t = 1, \bar Z = (-1, -1))]$ & 0.4 & 0 & 0.1 & 0.95\\
+\bottomrule
+\end{tabularx}
+\end{subtable}
