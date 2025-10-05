@@ -153,7 +153,7 @@ generate_random_data_hybrid <- function(N, T = 112, T_SMART = 28, p_SMART = rep(
       # centered action at time t
       A_t_c <- A_t - trt_prob_t
       # generate residual error
-      error_t <- 0#rnorm(1, mean = 0, sd = error_sd)
+      error_t <- rnorm(1, mean = 0, sd = error_sd)
       error_total <- error_t + error_cor * error_t_previous
       SZ1_c <- state_t * Z_1 - SZ1_centered(eta_state, A_t_previous, CZ2)
       
