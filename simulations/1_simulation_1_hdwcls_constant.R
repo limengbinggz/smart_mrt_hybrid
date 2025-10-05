@@ -626,39 +626,13 @@ run_ee <- function(data, p_tilde){
   # get the design matrix without A
   design_mat_m <- model.matrix(Y ~ Z1*Z2_after, data = data_augmented)
   design_mat_m <- design_mat_m[, select_var2]
-  # d U_2 / d \gamma
-  design_mat_m_weighted_sqrt <- design_mat_m * sqrt(data_augmented$weight_SMART)
-  mat_multiplier <- solve(crossprod(design_mat_m_weighted_sqrt))
-
   design_mat_m_weighted <- design_mat_m * data_augmented$weight_SMART
   design_mat_m_list <- split(data.table(design_mat_m_weighted), data_augmented$id)
   design_mat_m_list <- lapply(design_mat_m_list, as.matrix)
   N <- length(design_mat_m_list)
   
-  # 1. - d U1 / d (alpha, beta, \tilde gamma)
-  design_mat_model1 <- model.matrix( ~ state_c + stateZ1_c +
-                                       A_tilde_c + A_tilde_c:(Z1*Z2_after) +
-                                       Z1*Z2_after, data = data_augmented)
-  design_mat_model1 <- design_mat_model1[, c("state_c", "stateZ1_c", select_var1)]
-  weights <- data_augmented$weight
-  design_mat_model1_weighted <- design_mat_model1 * sqrt(data_augmented$weight)
-  # design_mat_model1_list <- split(data.table(design_mat_model1_weighted), data_augmented$id)
-  # design_mat_model1_list <- lapply(design_mat_model1_list, as.matrix)
-  # partial_U1_theta1 <- 0
-  # for (i in 1:nrow(data_augmented)) {
-  #   partial_U1_theta1 <- partial_U1_theta1 + weights[i] * tcrossprod(design_mat_model1[i,]) 
-  # }
-  partial_U1_theta1 <- crossprod(design_mat_model1_weighted)
-  
-  
-  # 2. d U2 / d (alpha, beta, \tilde gamma)
-  p_control <- 2
-  partial_U2_theta1 <- crossprod(design_mat_model1 * data_augmented$weight_SMART, design_mat_m)
-  partial_U2_theta1[(1:p_control),] <- 0
-  
-  crossprod(partial_U2_theta1, solve(partial_U1_theta1)) %*% design_mat_model1
-
-    
+  design_mat_m_weighted_sqrt <- design_mat_m * sqrt(data_augmented$weight_SMART)
+  mat_multiplier <- solve(crossprod(design_mat_m_weighted_sqrt))
   
   # 1. \sum_i \sum_t W_i m_it t(m_it) var(Y_it)
   # initialize \sum_i \sum_t m_it t(m_it) var(Y_it)

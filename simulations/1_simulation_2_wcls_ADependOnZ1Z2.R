@@ -259,11 +259,16 @@ data[, before := (time < T_SMART)*1]
 data[, after := (time >= T_SMART)*1]
 
 ## run GEE
-out <- geeglm(Y ~ state + state:Z1 +
+# out <- geeglm(Y ~ state + state:Z1 +
+#                 A_tilde_c + A_tilde_c:(Z1*Z2_after),
+#               data = data, weights = weight_MRT, id = id)
+# select_var <- c("A_tilde_c", "Z1:A_tilde_c",
+#                 "A_tilde_c:Z2_after", "Z1:A_tilde_c:Z2_after")
+out <- geeglm(Y ~ state + state:Z1 + Z1*Z2_after +
                 A_tilde_c + A_tilde_c:(Z1*Z2_after),
               data = data, weights = weight_MRT, id = id)
 select_var <- c("A_tilde_c", "Z1:A_tilde_c",
-                "A_tilde_c:Z2_after", "Z1:A_tilde_c:Z2_after")
+                "Z2_after:A_tilde_c", "Z1:Z2_after:A_tilde_c")
 
 # out <- geeglm(Y ~ -1 + state + state:Z1 +
 #                 A_tilde_c + A_tilde_c:Z1 +

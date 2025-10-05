@@ -583,11 +583,6 @@ run_ee <- function(data, p_tilde){
   
   
   
-  
-  
-  
-  
-  
   # get the variances of the predicted Y
   # get the design matrix without A
   design_mat_m <- model.matrix(Y ~ Z1*Z2_after, data = data_augmented)

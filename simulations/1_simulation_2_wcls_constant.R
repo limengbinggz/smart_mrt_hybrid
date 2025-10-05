@@ -246,11 +246,16 @@ data[, before := (time < T_SMART)*1]
 data[, after := (time >= T_SMART)*1]
 
 ## run GEE
-out <- geeglm(Y ~ state + state:Z1 +
+out <- geeglm(Y ~ state + state:Z1 + Z1*Z2_after +
                 A_tilde_c + A_tilde_c:(Z1*Z2_after),
               data = data, weights = weight_MRT, id = id)
 select_var <- c("A_tilde_c", "Z1:A_tilde_c",
-                "A_tilde_c:Z2_after", "Z1:A_tilde_c:Z2_after")
+                "Z2_after:A_tilde_c", "Z1:Z2_after:A_tilde_c")
+# out <- geeglm(Y ~ state + state:Z1 +
+#                 A_tilde_c + A_tilde_c:(Z1*Z2_after),
+#               data = data, weights = weight_MRT, id = id)
+# select_var <- c("A_tilde_c", "Z1:A_tilde_c",
+#                 "A_tilde_c:Z2_after", "Z1:A_tilde_c:Z2_after")
 select_idx <- match(select_var, names(out$coefficients))
 solution <- out$coefficients[select_idx]
 cov_mat <- out$geese$vbeta[select_idx,]
